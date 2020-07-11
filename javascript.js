@@ -67,7 +67,7 @@ $(document).ready(
     runIt(imgs);
 
     function runIt() {
-      $(imgs).eq(i).fadeIn(3000, function() {
+      $(imgs).eq(i).fadeIn(1000, function() {
         setTimeout(runIt,'3500');
       });
       i = i + 1; 
@@ -77,6 +77,84 @@ $(document).ready(
     }
 });
 
-// on scroll nav bar
+// nav bar burger
+
+(function() {
+
+  var hamburger = {
+    navToggle: document.querySelector('.nav-toggle'),
+    nav: document.querySelector('nav'),
+
+    doToggle: function(e) {
+      e.preventDefault();
+      this.navToggle.classList.toggle('expanded');
+      this.nav.classList.toggle('expanded');
+    }
+  };
+
+  hamburger.navToggle.addEventListener('click', function(e) { hamburger.doToggle(e); });
+  hamburger.nav.addEventListener('click', function(e) { hamburger.doToggle(e); });
+
+}());
+
+ // nav bar right reservation bar
+
+// function clickOffOn() {
+// 	var element = document.getElementById("right-bar");
+//      element.classList.toggle("onoff");
+// };
+
+function toggle_show_hide(id){
+	var e = document.getElementById(id);
+	if ( e.style.transform == 'translateX(-450px)')
+		{ 
+			e.style.transform = 'translateX(450px)';
+		}
+		else
+		{
+			e.style.transform = 'translateX(-450px)';
+		}
+
+}
+
+
+
+
+
+
+
+
+// form
+
+// date auto slash 
+
+var date = document.getElementById('date');
+
+    function checkValue(str, max) {
+      if (str.charAt(0) !== '0' || str == '00') {
+        var num = parseInt(str);
+        if (isNaN(num) || num <= 0 || num > max) num = 1;
+        str = num > parseInt(max.toString().charAt(0)) 
+               && num.toString().length == 1 ? '0' + num : num.toString();
+      };
+      return str;
+    };
+
+    date.addEventListener('input', function(e) {
+      this.type = 'text';
+      var input = this.value;
+      if (/\D\/$/.test(input)) input = input.substr(0, input.length - 1);
+      var values = input.split('/').map(function(v) {
+        return v.replace(/\D/g, '')
+      });
+      if (values[0]) values[0] = checkValue(values[0], 12);
+      if (values[1]) values[1] = checkValue(values[1], 31);
+      var output = values.map(function(v, i) {
+        return v.length == 2 && i < 2 ? v + '/' : v;
+      });
+      this.value = output.join('').substr(0, 10);
+    });
+
+
 
 

@@ -5,13 +5,104 @@ body { background-color: black; }
  	font-family: 'Cormorant Garamond', serif;
  }
 
+ li { 
+
+ 	margin-top: 10px;
+
+  }
+input , textarea ,label ,select {
+	text-align: center;
+	font-size:20px;
+	height: 45px !important;
+}
+
+
+p , li {
+	font-size: 1.5vw;
+}
+
+h1 , h2 , h3 {
+	font-size: 2.5vw;
+	font-weight: bold;
+}
+
+a {
+	cursor: pointer;
+}
+/*.onoff {
+	position: fixed;
+	background-color: black;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+	left: 100%;
+	transform: translateX(-30%);
+	transition: ease-in 0.5s;
+	color: white;
+	padding: 200px 100px 100px;
+	
+
+}*/
+
+
+.right-bar {
+	position: fixed;
+	background-color: black;
+	height: 100%;
+	width: 100%;
+	z-index: 2;
+	right: -100%;
+	transform: translateX(450px);
+	transition: ease-in 0.5s;
+	color: white;
+	padding: 140px 80px 100px;
+}
+
+
+}
+.form {
+}
+
+ .close {
+
+
+ }
+
+ .formtop {
+ 	position: relative;
+
+
+ }
+ .reservationform {
+ 	padding-top: 50px;
+ 	height: 80vh;
+ 	
+ }
+
+.submit {
+	border-style: solid;
+	  border-color: white;
+	background-color: black;
+	color: white;
+	cursor: pointer;
+	padding: 10px 10px 10px;
+
+}
+
+.submit:hover {
+	color:black;
+	   background-color: white;
+	    transition: 0.2s;
+	    border-style: solid;
+	  border-color: black;
+}
 
 
 .nav-top  { 
 position: fixed;
-height: 10%;
+height: 10vh;
 background-color: black;
-padding: 0;
+padding-bottom: 0;
 margin: 0;
 width: 100%;
 color: white;
@@ -22,7 +113,7 @@ justify-content: center;
  margin-right: auto;
  }
 
- .bg-black-navtop {position: fixed; height: 10%; width: 100%; background-color: black; z-index: 1;}
+ .bg-black-navtop {position: fixed; height: 10vh; width: 100%; background-color: black; z-index: 1;}
 
 
 
@@ -40,11 +131,16 @@ justify-content: center;
 	    transition: 0.2s;
 	    border-style: solid;
 	  border-color: black;}
+
+ 
  .top-right {
-	 	border-style: solid;
+	font-size: 20px;
+	 border-style: solid;
 	  border-color: white;
 	  padding: 15px 20px 15px;
-	 	transition: ease-out 0.3s;
+	transition: ease-out 0.3s;
+	cursor: pointer;
+
  }
  .topfont {
   font-size: 100%;
@@ -63,7 +159,7 @@ justify-content: center;
 
 .demo-wrapper {
   overflow: hidden;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
 }
 
@@ -80,7 +176,7 @@ justify-content: center;
 
 .bg {
   width: 100%;
-  height: 100%;
+  height: 100vh !important;
   padding: 1px;
   background-color: black;
 }
@@ -165,7 +261,7 @@ justify-content: center;
  position: absolute;
  font-size: 100%;
  color: white;
- padding: 40% 10% 10%;
+ padding: 25% 10% 10%;
  background-color: rgba(0,0,0, 0.3); 
  height: 100%; 
 }
@@ -204,6 +300,7 @@ justify-content: center;
 .grid {
 
 	width: 100%;
+	height: 100vh;
 
 	
 	display: grid !important;
@@ -256,19 +353,19 @@ justify-content: center;
 .footerleft { 
 	grid-area: footerleft;
 	height: 50vh;
-	padding: 150px 150px 100px;
+	padding: 5% 25% 5%;
 
 	 }
 .center {
 	grid-area: center;
 	height: 50vh;
-	padding: 150px 150px 100px;
+	padding: 5% 25% 5%;
 
 }
 .footerright { 
 	grid-area: footerright;
 	height: 25vh;
-	padding: 150px 150px 100px;
+	padding: 5% 25% 5%;
 
 
 
@@ -279,7 +376,7 @@ justify-content: center;
 	grid-area: lowerright;
 	height: 25vh;
 	background-color: #dce4e7;
-	padding: 150px 150px 100px;
+	padding: 5% 25% 5%;
 }
 
 .footer-reservation {
@@ -299,7 +396,7 @@ justify-content: center;
 .footerbig { 
 
 
-	padding: 30px 0px 30px;
+	padding: 0px 0px 30px;
 
 
  }
@@ -321,7 +418,24 @@ justify-content: center;
 	width: 100vw;
 	text-align: center;
     }*/
+.input-subscribe  { 
 
+
+
+	font-size: 30px;
+	height: 70px;
+	width: 20vw;
+	padding: 5px 10px 5px;
+	text-align:center;
+
+
+ }
+
+ .submit {
+ 	width: 10vw;
+ }
+
+ 
 
 
 
@@ -394,7 +508,98 @@ justify-content: center;
 	 background-image: url(images/project-image11.jpg);
 	  background-size: cover;
 	  background-position: center; }
-/*scroll nav bar*/
+
+/*burger nav bar*/
+
+.nav {
+  -webkit-transition: left 0.5s ease;
+  -moz-transition: left 0.5s ease;
+  -ms-transition: left 0.5s ease;
+  -o-transition: left 0.5s ease;
+  transition: left 0.5s ease;
+  background: black;
+  cursor: pointer;
+  font-size: 2rem;
+  height: 100vh;
+  left: -20rem;
+  padding: 6rem 2rem 2rem 2rem;
+  position: fixed;
+  top: 0;
+  width: 20rem;
+  z-index: -1;
+}
+
+.nav.expanded { left: 0; }
+
+.nav ul {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.nav-toggle {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  height: 2rem;
+  left: 2rem;
+  position: fixed;
+  top: 2rem;
+  width: 3.6rem;
+  z-index: 1;
+}
+
+.nav-toggle:hover { opacity: 0.8; }
+
+.nav-toggle .nav-toggle-bar,  .nav-toggle .nav-toggle-bar::after,  .nav-toggle .nav-toggle-bar::before {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  background: white;
+  content: '';
+  height: 0.4rem;
+  width: 100%;
+}
+
+.nav-toggle .nav-toggle-bar { margin-top: 0; }
+
+.nav-toggle .nav-toggle-bar::after { margin-top: 0.8rem; }
+
+.nav-toggle .nav-toggle-bar::before { margin-top: -0.8rem; }
+
+.nav-toggle.expanded .nav-toggle-bar { background: transparent; }
+
+.nav-toggle.expanded .nav-toggle-bar::after, .nav-toggle.expanded .nav-toggle-bar::before {
+  background: white;
+  margin-top: 0;
+}
+
+.nav-toggle.expanded .nav-toggle-bar::after {
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.nav-toggle.expanded .nav-toggle-bar::before {
+  -ms-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
 
 
 

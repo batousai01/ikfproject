@@ -4,18 +4,94 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<link rel="stylesheet" href="style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="images/favicon.png">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap" rel="stylesheet">
 </head>
+
+
 <body>
+
+	<!-- reservation right slid bar -->
+	<div class="right-bar" id="right-bar">
+
+		<span onclick="toggle_show_hide('right-bar')" class="top-right close">CLOSE</span>
+
+		<div class="reservationform">
+
+		<form class="form" action="">
+
+			Name <br>
+			<input placeholder="Name" style="width: 300px; height: 30px;" type="text"> <br>
+			Phone <br>
+			<input placeholder="Example:+971123456789	" style="width: 300px; height: 30px;" type="text"> <br>
+			Date <br>
+			<input id="date" placeholder="mm/dd/yyyy" style="width: 300px; height: 30px;" type="text"> <br>
+			<label style="width: 300px; height: 30px;" for="time">Time</label> <br>
+			<select style="width: 300px; height: 30px;" id="time" name="time" form="time">
+			  <option style="width: 300px; height: 30px;" value="time">Breakfast 8am</option>
+			  <option style="width: 300px; height: 30px;" value="time">Breakfast 9am</option>
+			  <option style="width: 300px; height: 30px;" value="time">Breakfast 10am</option>
+			  <option style="width: 300px; height: 30px;" value="time">Breakfast 11am</option>
+			  <option style="width: 300px; height: 30px;" value="time">Lunch 12pm</option>
+			  <option style="width: 300px; height: 30px;" value="time">Lunch 1pm</option>
+			  <option style="width: 300px; height: 30px;" value="time">Dinner 6pm</option>
+			  <option style="width: 300px; height: 30px;" value="time">Dinner 7pm</option>
+			  <option style="width: 300px; height: 30px;" value="time">Dinner 8pm</option>
+			  <option  style="width: 300px; height: 30px;"value="time">Dinner 9pm</option>
+			</select> <br>
+
+			<label for="">Number of Attendees</label> <br>
+			Adult <br>
+			<input placeholder="#" style="width: 300px; height: 30px;" type="text" name="adult" id=""> <br>
+			Kids <br>
+			<input placeholder="#" style="width: 300px; height: 30px;" type="text" name="Kids" id=""> <br>
+
+            Comments/Additional Requests <br>
+			<textarea placeholder="Write here" name="comments/request" id="" style="width: 300px; height: 150px !important;"></textarea> <br>
+
+
+			<input class="submit" type="submit">
+			
+			
+
+		</form>
+
+
+		</div>
+
+
+
+
+
+	</div>
+
+
+
 
 
 	
-<!-- <div class="bg-black-navtop"></div> -->
+	<!-- nav bar burger-->
 	<div class="nav-top fixed topfont" id="navtop">
+		<div class="nav-toggle">
+		  <div class="nav-toggle-bar"></div>
+		</div>
+		<nav class="nav">
+		  <ul>
+		    <li><a>HOME</a></li>
+		    <li><a>MENU</a></li>
+		    <li><a>ABOUT</a></li>
+		    <li><a>RESERVATION</a></li>
+		    <li><a>CONTACT</a></li>
+		    <li><a>EVENTS</a></li>
+		    <li><a>WEDDING</a></li>
+		    <li onclick="toggle_show_hide('right-bar')"><a class="top-right">MAKE A RESERVATION</a></li>
+		  </ul>
+		</nav>
 
-		<div class="burger">BURGER</div>
-		<div class="logo topfont">LOGO</div>
-		<div class="reservation top-right-text topfont"><a class="top-right">MAKE A RESERVATION</a></div>
+		<div class="logo topfont"></div>
+		<div  onclick="toggle_show_hide('right-bar')" class="reservation top-right-text topfont"><a class="top-right" id="nav-right">MAKE A RESERVATION</a></div>
 	</div>
 
 	<!-- PAGE 1 -->
@@ -123,8 +199,9 @@
 
      	<div class="footertopright">
 
-     	  <form class="" action="">
-         	SUBSCRIBE<input type="text">
+     	  <form class="subscribe" action="">
+         	<input class="input-subscribe" type="text" id="fname" name="firstname" placeholder="Email Address">
+         	<input class="input-subscribe submit" type="submit" value="SUBSCRIBE">
          </form>
 
 	    </div>
@@ -152,9 +229,9 @@
          <div class="center">
 
          	<h1 class="footerbig">OPENING HOURS</h1>
-     		<p>LUNCH<br>Saturday to Sunday<br>Bookings 12pm to 1:30pm<br>DINNER<br>Thursday to Sunday<br>Bookings 6pm to 8:45pm</p>
+     		<p>LUNCH<br>Saturday to Sunday<br>Bookings 8am to 1pm<br>DINNER<br>Thursday to Sunday<br>Bookings 6pm to 9pm</p>
      		<h1 class="footerbig">RESERVATION</h1>
-     		<a class="footer-reservation">MAKE A RESERVATION</a>
+     		<a class="footer-reservation" onclick="clickOffOn()">MAKE A RESERVATION</a>
 
 
          </div>
